@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, HttpCode, Param, Post, Put } from "@nestjs/common";
 import { RoleAtLeastAdmin } from "src/auth/role.decorator";
-import { Department } from "./entities/department.entity";
+import { Department } from "../Department/entities/Department.entity";
 import { AbstractController } from "../shared/abstract.controller";
 import { DepartmentService } from "./department.service";
 import { DepartmentRequestDto, DepartmentResponseDto } from "./dto/department.dto";
