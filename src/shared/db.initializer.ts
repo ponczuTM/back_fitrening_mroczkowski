@@ -1,7 +1,5 @@
-import { Injectable } from "@nestjs/common";
-//import { InjectRepository } from "@nestjs/typeorm";
 import { Activity } from "../activity/entities/activity.entity";
-import { DeepPartial, Repository } from "typeorm";
+import { Repository } from "typeorm";
 import { Department } from "src/department/entities/department.entity";
 import { Role } from "src/role/entities/role.entity";
 import { Schedule } from "src/schedule/entities/schedule.entity";
@@ -104,8 +102,8 @@ export class DbInitializer {
                 role: { id: 2 }
             },
             {
-                email: "jton@gmail.com",
-                passwordHash: "41e7f0ee7556dcabcdb0d019fe0b0568",
+                email: "jtona@gmail.com",
+                passwordHash: "b01a93599116d2272d1e4fe146d9cacf",
                 firstName: "Jan",
                 lastName: "Tona",
                 department: {id: 1},
@@ -131,8 +129,8 @@ export class DbInitializer {
                 role: { id: 3 }
             },
             {
-                email: "dela@gmail.com",
-                passwordHash: "4e4a3b45c22f1be8f65067b617722ad6",
+                email: "edom@gmail.com",
+                passwordHash: "217303e52413d95657c2ef519d5791db",
                 firstName: "Ela",
                 lastName: "Dom",
                 department: {id: 1},
@@ -253,8 +251,6 @@ export class DbInitializer {
                 schedule: { id: 2 }
             }
         ]);
-        //-
-        //-
         await this.scheduleRepository.save({
             target: { id: 3 },
             leaderUser: { id: 4 }
@@ -286,7 +282,6 @@ export class DbInitializer {
                 schedule: { id: 4 }
             }
         ]);
-        //-----
         await this.scheduleRepository.save({
             target: { id: 1 },
             leaderUser: { id: 3 }
@@ -299,7 +294,6 @@ export class DbInitializer {
                 schedule: { id: 5 }
             }
         ]);
-        //-----
         await this.scheduleRepository.save({
             target: { id: 6 },
             leaderUser: { id: 14 }
@@ -312,7 +306,6 @@ export class DbInitializer {
                 schedule: { id: 6 }
             },
         ]);
-        //-----
         await this.activityRepository.save([
             {
                 moment: "2022-11-25",
@@ -349,7 +342,6 @@ export class DbInitializer {
                 user: { id: 6 },
                 schedule: { id: 2 }
             },
-            //----
             {
                 moment: "2022-11-25",
                 user: { id: 7 },
@@ -395,7 +387,6 @@ export class DbInitializer {
                 user: { id: 7 },
                 schedule: { id: 3 }
             },
-            //----
             {
                 moment: "2022-11-25",
                 user: { id: 11 },
@@ -471,7 +462,6 @@ export class DbInitializer {
                 user: { id: 11 },
                 schedule: { id: 4 }
             },
-            //----
             {
                 moment: "2022-11-25",
                 user: { id: 12 },
@@ -492,7 +482,6 @@ export class DbInitializer {
                 user: { id: 12 },
                 schedule: { id: 1 }
             },
-            //----
             {
                 moment: "2022-11-25",
                 user: { id: 12 },

@@ -34,15 +34,10 @@ export class ScheduleService extends AbstractService<Schedule, ScheduleRequestDt
       for (const entry of cyclicEntries.concat(whiteEntries)) {
         result.push(entry);
       }
-      // przejdź do kolejnego dnia
       currentDateFrom = currentDateFrom.plus({ days: 1 });
-      console.log();
     }
     return result;
   }
-
-  // 01. sprawdzamy czy dla 'date' jest termin cykliczny w grafiku
-  // 02. termin jest anulowany jeżeli w tym samym momencie istnieje "czarny wpis"
   private processCyclic(schedule: Schedule, date: DateTime, entries: {from: DateTime, to: DateTime}[]) {
     for (const item of schedule.items) {
       if (item.kind == ScheduleItemKind.Cyclic) {
@@ -61,7 +56,6 @@ export class ScheduleService extends AbstractService<Schedule, ScheduleRequestDt
     }
   }
 
-  // 01. sprawdzamy czy dla 'date' istnieje "biały wpis"
   private processWhite(schedule: Schedule, date: DateTime, entries: {from: DateTime, to: DateTime}[]) {
     for (const item of schedule.items) {
       if (item.kind == ScheduleItemKind.SinglePresence) {
